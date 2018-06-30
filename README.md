@@ -18,6 +18,10 @@ This is when I thought of the idea of creating a Tic Tac Toe game that could tea
 + When you have all indexs checked you can then change the P1 1st move to another number and repeat everything again
 + Other items on screen are just visual aids to help me see what is going on eg data in boxes on right show data for a loosing game, and when a move is learned it shows in red, so I can tell visually it is working
 + Other displays shows quantity of wins losses and draws for each player
-+ Comp second moves and comp third moves just show the move choices available at each move .... this helps me visualize the changes when computer learns and i can see the choices changing
++ Comp second moves and comp third moves just show the move choices available at each move .... this helps me visualize the changes when computer learns and i can see the choices changing  
+
+### Things Id like to Add
++ First a option to store data so when I shut down webpage or refresh I dont loose the data allready created  
+So will either have to connect to a database or look in to local storage
 
 
