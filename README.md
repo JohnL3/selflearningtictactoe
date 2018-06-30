@@ -26,7 +26,7 @@ The way it learns is pretty simple ... if it looses a game it checks for a force
   
 + This works fine for when it changes second moves that have been the cause of it loosing.  
 But for third moves that are the cause of it loosing it dose the same ... and while this works I realized this needs to be modified for the third moves as there is a slight difference to what goes on for third moves compared to second moves.  
-And this will remove a small amount of move choices that are only bad for some moves but not others, and I want to try to only remove as few as possible moves.  
+And this will remove a small amount of move choices that are only bad for some moves but not others, and I want to try to only remove as few mvoes as possible.  
 
 ### Things Id like to Add
 + First a option to store data so when I shut down webpage or refresh I dont loose the data allready created  
