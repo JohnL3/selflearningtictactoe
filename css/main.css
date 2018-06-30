@@ -55,10 +55,7 @@ hr {
 	grid-template-columns: 3fr 2fr;
 	grid-template-rows: 90px 90px 90px 90px 1fr;
 }
-.inpu {
-	box-sizing: border-box;
-    padding-left: 170px;
-}
+
 .winLoose {
 	grid-row:1;
 	display: grid;
@@ -79,8 +76,10 @@ hr {
 }
 .inpu {
 	display: grid;
-    grid-template-columns: 120px 150px;
+    grid-template-columns: 120px 150px 150px;
     grid-template-rows: 30px 30px;
+	box-sizing: border-box;
+    padding-left: 170px;
 }
 .mov {
 	grid-row: 4;

@@ -583,6 +583,7 @@ function compLengthTwo(wmp, pm, data) {
 	let num;
 	// anything with game. ... is what i use to save data on the game
 	game.c_m3 = [...choices];
+	let val = $('#p23').val();
 	
 	if (data.length === 0) {
 		num = dataLengthIsZero('c_m3', val, '#mp23');
@@ -627,7 +628,7 @@ function theseMoves2(data,game,moveNum,spot) {
 	let num;
 	let nc;
 	let remC = new Set();
-	let lData = filterLostData(data);
+	let lData = filterLostData(data, moveNum);
 	
 	//Now i filter the specific ones to game being played 
 	filterLData(1, lData, moveNum, remC, lostD);
@@ -684,13 +685,14 @@ function theseMoves3(data,game,moveNum,spot) {
 	let lost3 = $('#lost3');
 	lost3.html('<li>Bad third Moves</li>');
 	$('#mp23').text('');
+	let val = $('#p23').val();
 	
 	let pickFrom = [...choices];
 	let num;
 	let nc;
 	let remC = new Set();  //
 	// filter lost data to get games that start with same first human move and same first comp move
-	let lData = filterLostData(data);
+	let lData = filterLostData(data, moveNum);
 	
 	d('lData',lData);
 	
@@ -705,17 +707,40 @@ function theseMoves3(data,game,moveNum,spot) {
 	
 	
 	//left with good moves and return a randomly picked one
+	/*game[spot] = [...pickFrom];
+	$('#mp23').text(game[spot]);
+	num = pickFrom[getRand(0,pickFrom.length-1)];*/
+	
 	game[spot] = [...pickFrom];
 	$('#mp23').text(game[spot]);
-	num = pickFrom[getRand(0,pickFrom.length-1)];
+	if(val) {
+		if(+val <= game[spot].length -1) {
+			num = pickFrom[+val];
+		} else {
+			num = pickFrom[getRand(0,pickFrom.length-1)];
+		}
+	} else {
+		num = pickFrom[getRand(0,pickFrom.length-1)];
+	}
 	return num;
 }
 
-function filterLostData(data) {
-	return  data.filter(x => {
-		if(x.P2 === game.c_move[0] && x.P1 === game.h_move[0] && x.result === 'Lost') {
-			return x};
-	})
+function filterLostData(data, moveNum) {
+	if(moveNum === 2) {
+		return  data.filter(x => {
+			if(x.P2 === game.c_move[0] && x.P1 === game.h_move[0] && x.result === 'Lost') {
+				return x};
+		});
+	}
+	if(moveNum === 3) {
+		return  data.filter(x => {
+			if(x.P2 === game.c_move[0] && x.P1 === game.h_move[0] && x.c_move[1] === game.c_move[1] && x.result === 'Lost') {
+				return x};
+		});
+	}
+	
+	
+	
 }
 
 function compLengthThree(wmc, moves) {
