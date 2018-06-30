@@ -6,8 +6,8 @@ It is intended as something for me to work at now and again as an ongoing projec
 I have created a Tic Tac Toe game and wanted to challange myself to see if I could improve on it.
 This is when I thought of the idea of creating a Tic Tac Toe game that could teach itself or you could teach it not to loose.
 ### Instructions
-+ As this is a work in progress You will ALWAYS have to choose X from the choose you side option .... and ALWAYS choose O from the choose who starts option
-+ After each game you HAVE TO REPEAT THIS so that the computer starts first
++ As this is a work in progress You will **ALWAYS** have to choose X from the choose your side option .... and **ALWAYS** choose O from the choose who starts option
++ After each game you **HAVE TO REPEAT THIS** so that the computer starts first
 + Anywhere you see p1 ... p1 refers to player one Human
 + Anywher you see p2 ... p2 refers to player two computer
 + For computer to learn its self dont fill in the input boxes .... and just play the game ... over and over ... when it looses a game it will when it comes across these moves played again adjust its moves so as not to loose
