@@ -19,6 +19,12 @@ This is when I thought of the idea of creating a Tic Tac Toe game that could tea
 + Other items on screen are just visual aids to help me see what is going on eg data in boxes on right show data for a loosing game, and when a move is learned it shows in red, so I can tell visually it is working
 + Other displays shows quantity of wins losses and draws for each player
 + Comp second moves and comp third moves just show the move choices available at each move .... this helps me visualize the changes when computer learns and i can see the choices changing  
+### Changes needed to how it learns
++ The program is working exactly as I have programmed it to do, but I have just found something which I need to improve on as I had not seen or thought of when I was coming up with a way for the computer to learn.  
+The way it learns is pretty simple ... if it looses a game it checks for a forced move , it then changes the move used previous to the forced move. And adds the move it deemed to have lost with to a list of moves not to use in this situation in future.  
+This works fine for when it changes second moves that have been the cause of it loosing.
+But for third moves that are the cause of it loosing it dose the same ... and while this works I realized this needs to be modified for the third moves as there is a slight difference to what goes on for third moves compared to second moves.  
+And this will remove a small amount of move choices that are only bad for some moves but not others, and I want to try to only remove as few as possible moves.  
 
 ### Things Id like to Add
 + First a option to store data so when I shut down webpage or refresh I dont loose the data allready created  
