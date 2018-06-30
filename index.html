@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>repl.it</title>
+
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+	    <div class="container">
+			<header>
+				<h2>Advanced Front End Development Project</h2>
+				<span class="title-name">Tic Tac Toe</span>
+				</header>
+		</div>
+      <div class='hrr'><hr></div>
+	  
+      <div class="outer">
+       
+        <!-- <div class="notes"> -->
+          <span class='game-type'>Choose your side</span>
+			<input type='radio' class='play' name='player' value='X'>
+			<span class="oneP" value="OneP">X</span>
+			<input type='radio' class='comp' name='player' value='O'>
+			<span class="twoP" value="TwoP">O</span>
+			<!-- <div class="whoStarts"> -->
+				<span class='who-starts'>Choose who Starts</span>
+				
+				<input type='radio' class='x'name='start' value='X'>
+				<span class="Pone" value="Pone">X</span>
+				<input type='radio' class='o' name='start' value='O'>
+				<span class="Ptwo" value="Ptwo">O</span>
+				<button class="start" value="start">Start</button>
+			<!-- </div> -->
+			<div class='inpu'>
+				<span> P2 1st move</span>
+				<span> P2 2nd move Index</span>
+				<input id='p21'>
+				<input id='p22'>
+			</div>
+       </div>
+        <div class='inner'>
+			<div class="board">
+			  <div class="squares" id='1' ></div>
+			  <div class="squares" id='2' ></div>
+			  <div class="squares" id='3' ></div>
+			  <div class="squares" id='4' ></div>
+			  <div class="squares" id='5' ></div>
+			  <div class="squares" id='6' ></div>
+			  <div class="squares" id='7' ></div>
+			  <div class="squares" id='8' ></div>
+			  <div class="squares" id='9' ></div>
+			</div>
+			<div class='data'>
+				<div class='winLoose'>
+					<div class='P1'>
+					<span>Human P1</span>
+						<div class='winloosedraw'>
+							<span class='res'>WIN</span>
+							<span class='res'>Lost</span>
+							<span class='res'>Draw</span>
+							<span id='Wp1'>0</span>
+							<span id='Lp1'>0</span>
+							<span id='Dp1'>0</span>
+						</div>
+					</div>
+					<div class='P2'>
+					<span>Comp P2</span>
+					<div class='winloosedraw'>
+							<span class='res'>WIN</span>
+							<span class='res'>Lost</span>
+							<span class='res'>Draw</span>
+							<span id='Wp2'>0</span>
+							<span id='Lp2'>0</span>
+							<span id='Dp2'>0</span>
+						</div>
+					</div>
+				</div>
+				<ul id='lost'>
+					<li> data</li>
+				</ul>
+				<br>
+				<ul id='lost3'>
+					<li> data</li>
+				</ul>
+				<div class='mov'>
+					<span class='mp22'>Comp P2 second Moves</span>
+					<span id='mp22'></span>
+					<span class='mp23'>Comp P2 third Moves</span>
+					<span id='mp23'></span>
+				</div>
+				<div id='allData'>
+					<h5>All the Data</h5>
+					
+				</div>
+			</div>
+		</div>
+      <!-- </div> -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>  
+    </body>
+</html>

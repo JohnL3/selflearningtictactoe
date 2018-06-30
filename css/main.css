@@ -1,0 +1,202 @@
+body,html{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	 font-family: 'Orbitron', sans-serif;
+	 background: white;
+	
+}
+.container {
+  display: grid;
+  grid-auto-rows: minmax(30px,auto);
+  grid-template-columns: repeat(12, 1fr);
+}
+header {
+  grid-column: 3/11;
+}
+h2 {
+  border-left: 2px solid black;
+  padding-left: 20px;
+}
+.hrr {
+  width: 85%;
+  margin: auto;
+}
+hr {
+  border: 1px solid black;
+}
+.title-name {
+  font-size: 20px;
+}
+.error-moves {
+	border: 1px solid black;
+	margin-bottom: 5px;
+	margin-right: 20px;
+	box-sizing: border-box;
+	padding: 10px;
+}
+.outer{
+  display: grid;
+  grid-template-columns: 130px 30px 30px 30px 30px 1fr;
+  grid-template-rows: 35px 35px 35px 35px;
+  margin-bottom: 10px;
+}
+.game-type {
+	grid-column: 2/8;
+	font-size: 24px;
+	font-weight: 600;
+}
+.inner {
+	display: grid;
+	grid-template-columns: 20px 1fr 3fr;
+}
+.data {
+	display: grid;
+	grid-template-columns: 3fr 2fr;
+	grid-template-rows: 90px 90px 90px 90px 1fr;
+}
+.inpu {
+	box-sizing: border-box;
+    padding-left: 170px;
+}
+.winLoose {
+	grid-row:1;
+	display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-sizing: border-box;
+    padding: 20px;
+}
+.winLoose span {
+	padding: 0 40px;
+}
+.winLoose span.res {
+	display: inline;
+	padding: 0 20px;
+}
+#nuse {
+	color: red;
+	font-weight: 600;
+}
+.inpu {
+	display: grid;
+    grid-template-columns: 120px 150px;
+    grid-template-rows: 30px 30px;
+}
+.mov {
+	grid-row: 4;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 25px 25px;
+}
+.mp23 {
+	grid-column: 2;
+}
+#mp22 {
+	grid-row: 2;
+}
+
+#Wp1,
+#Lp1,
+#Dp1,
+#Wp2,
+#Lp2,
+#Dp2 {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+#allData {
+	grid-row: 1/-1;
+	grid-column: 2;
+}
+#lost {
+	grid-row: 2
+}
+#lost3 {
+	grid-row: 3;
+}
+input {
+	width: 20px;
+	height: 20px;
+	align-self: center;
+}
+.play {
+	grid-column: 2/3;
+}
+.comp {
+	grid-column: 4/5;
+}
+.oneP {
+	grid-column: 3/4;
+	grid-row: 2;
+}
+.twoP {
+	grid-column: 5/6;
+	grid-row: 2;
+	box-sizing:border-box;
+}
+.game-type,
+.who-starts {
+	align-self: center;
+}
+
+button,
+.Pone,
+.Ptwo,
+.twoP,
+.oneP {
+	align-self: center;
+	justify-self: center;	
+}
+.Pone,
+.oneP {
+	font-size: 24px;
+	font-weight: 600;	
+}
+.twoP,
+.Ptwo {
+	font-size: 28px;
+	font-weight: 600;
+	padding-top: 5px;
+}
+.who-starts {
+	grid-row: 3;
+	grid-column: 2/8;
+	font-weight: 600;
+}
+.x {
+	grid-column: 2/3;
+}
+.0 {
+	grid-column: 4/5;
+}
+button {
+	grid-row: 5;
+	grid-column: 4;
+}
+.board{
+  width:310px;
+  height: 310px;
+  background-color: black;
+  display: grid;
+  grid-column: 2/3;
+  justify-self: center;
+  grid-template-columns: repeat(3, auto);
+}
+.squares{
+  width:100px;
+  height: 100px;
+  background-color: yellow;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+}
+@media only screen and (max-width : 768px) {
+  header {
+  grid-column: 2/13;
+}
+}
+
+
+
