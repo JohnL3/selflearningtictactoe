@@ -28,6 +28,9 @@ The way it learns is pretty simple ... if it looses a game it checks for a force
 But for third moves that are the cause of it loosing it dose the same ... and while this works I realized this needs to be modified for the third moves as there is a slight difference to what goes on for third moves compared to second moves.  
 And this will remove a small amount of move choices that are only bad for some moves but not others, and I want to try to only remove as few mvoes as possible.  
 
+### Update on changes needed
+Have adjusted the javascript code to sort out the above third moves problem. Initial test are showing it works and I will do further tests to make sure.
+
 ### Things Id like to Add
 + First a option to store data so when I shut down webpage or refresh I dont loose the data allready created  
 So I will either have to connect to a database or look in to local storage.
@@ -35,4 +38,6 @@ So I will either have to connect to a database or look in to local storage.
 + Would Really like to see if I can have two versions play against each other and learn as they go along.  Bonus as this could speed up the learning process, And also I have a feeling learning results could be different to if I taught them.
 + A total redesign of the whole webpage ... as this was just thrown to-gether as i thought of things that would help me visualize what was happening as I working away at this.
 
-
+### Changes since Initial commit
+1 Worked on and improved the learning code section
+2 Added another input box for (comp) P2 3rd move ... this makes checking for bad moves here quicker as before I would have to wait on a random function to choose a move which i can now force tic tac toe to pick.
