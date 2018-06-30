@@ -39,5 +39,5 @@ So I will either have to connect to a database or look in to local storage.
 + A total redesign of the whole webpage ... as this was just thrown to-gether as i thought of things that would help me visualize what was happening as I working away at this.
 
 ### Changes since Initial commit
-1 Worked on and improved the learning code section
-2 Added another input box for (comp) P2 3rd move ... this makes checking for bad moves here quicker as before I would have to wait on a random function to choose a move which i can now force tic tac toe to pick.
+1. Worked on and improved the learning code section
+2. Added another input box for (comp) P2 3rd move ... this makes checking for bad moves here quicker as before I would have to wait on a random function to choose a move which i can now force tic tac toe to pick.
