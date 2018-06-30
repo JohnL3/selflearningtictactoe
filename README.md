@@ -1,6 +1,6 @@
 # Self Learning Tic Tac Toe
 
-####About this project
+#### About this project
 I choose to do this as a way to work on problem solving.  
 It is intended as something for me to work at now and again as an ongoing project.  
 I have created a Tic Tac Toe game and wanted to challange myself to see if I could improve on it.
