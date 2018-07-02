@@ -742,7 +742,7 @@ function theseMoves3(data,game,moveNum,spot) {
 	let num;
 	let nc;
 	let remC = new Set();  //
-	// filter lost data to get games that start with same first human move and same first comp move
+	// filter lost data to get games that start with same 1st human move and same 1st comp move and same comp 2nd move
 	let lData = filterLostData(data, moveNum);
 	
 	d('lData',lData);
@@ -757,11 +757,7 @@ function theseMoves3(data,game,moveNum,spot) {
 	})
 	
 	
-	//left with good moves and return a randomly picked one
-	/*game[spot] = [...pickFrom];
-	$('#mp23').text(game[spot]);
-	num = pickFrom[getRand(0,pickFrom.length-1)];*/
-	
+	//left with good moves and return a randomly picked one unless val has a value
 	game[spot] = [...pickFrom];
 	$('#mp23').text(game[spot]);
 	if(val) {
@@ -789,9 +785,6 @@ function filterLostData(data, moveNum) {
 				return x};
 		});
 	}
-	
-	
-	
 }
 
 function compLengthThree(wmc, moves) {

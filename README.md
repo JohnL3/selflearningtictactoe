@@ -37,6 +37,7 @@ Have adjusted the javascript code to sort out the above third moves problem. Ini
 + Look at doing the learning option as well for when computer goes second and human starts
 + Would Really like to see if I can have two versions play against each other and learn as they go along.  Bonus as this could speed up the learning process, And also I have a feeling learning results could be different to if I taught them.
 + A total redesign of the whole webpage ... as this was just thrown to-gether as i thought of things that would help me visualize what was happening as I working away at this.
++ Possible Idea for later is to also to save win games. I could then program tic tac toe to play aggressively by choosing win option more than draw options, as at moment it chooses randomly, could program it to have a easy option where it would override its learning and throw in a few loosing plays. So there is a lot still I could do with this. 
 
 ### Changes since Initial commit
 1. Worked on and improved the learning code section
