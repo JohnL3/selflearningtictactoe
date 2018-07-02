@@ -41,3 +41,4 @@ So I will either have to connect to a database or look in to local storage.
 ### Changes since Initial commit
 1. Worked on and improved the learning code section
 2. Added another input box for (comp) P2 3rd move ... this makes checking for bad moves here quicker as before I would have to wait on a random function to choose a move which i can now force tic tac toe to pick.
+3. Have now added localstorage to the javascript ... this means the data will be saved to localstorage and will not be lost when you close the window. So you can come back another time and continue training your tic tac toe game.
