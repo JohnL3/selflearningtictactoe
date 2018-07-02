@@ -14,7 +14,7 @@ let d = (...x) => console.log(...x);
 	compWinningHand = [],
 	gameStarted = false,
 	evens = [2,4,6,8],
-	dataCollected = [],
+	storage = false,
 	game = {
 		starter: '',
 		P2: name,
@@ -29,6 +29,31 @@ let d = (...x) => console.log(...x);
 		c_m4: [],
 		dontUse: [],
 	}
+	
+	let dataCollected;
+	let savedDataCollected;
+	
+
+function checkLocalStorage(){
+	// function for checking localStorage got on stackoverflow
+	//https://stackoverflow.com/questions/16427636/check-if-localstorage-is-available
+    var test = 'test';
+    try {
+        localStorage.setItem(test, test);
+        localStorage.removeItem(test);
+        return true;
+    } catch(e) {
+        return false;
+    }
+}
+
+if(checkLocalStorage() === true){
+	storage = true;
+	dataCollected = localStorage.getItem('savedData') ? JSON.parse(localStorage.getItem('savedData')) : [];
+	savedDataCollected = JSON.parse(localStorage.getItem('savedData'));
+}else{
+    dataCollected = [];// unavailable
+}
 
   function resetGame() {
 	$('input[name=start]').prop('checked', false);
@@ -134,7 +159,10 @@ function playersTurn(num) {
 		
 		if(gameOver === true) {
 			
-			(game.result === 'Lost')? dataCollected.push(game): null;
+			if(game.result === 'Lost'){
+				dataCollected.push(game);
+				if(storage === true) localStorage.setItem('savedData', JSON.stringify(dataCollected));
+			};
 			setTimeout(function(){resetGame()},700);
 			};
 		
@@ -150,6 +178,9 @@ function playerMove(num) {
 }
 
 function displayData(data) {
+	if(storage === true){
+		data = JSON.parse(localStorage.getItem('savedData'));
+	}
 	let allData = $('#allData');
 	allData.html('');
 	let div1 = $('<div></div>')
@@ -213,12 +244,7 @@ function winner(arr,type) {
 		$(".board :nth-child(" + arr[x] + ")").css('background-color','red');
 	  }
 	game.result = 'Lost';
-	let c = $('#Wp1').html();
-	let cp2 = $('#Lp2').html();
-	cp2++;
-	c ++;
-	$('#Wp1').html(c);
-	$('#Lp2').html(cp2);
+	displayWinLooseDraw('Lost', 'p1');
 	gameOver = true;
 	}
 
@@ -228,18 +254,43 @@ function winner(arr,type) {
 			  $(".board :nth-child(" + arr[x] + ")").css('background-color','red');
 			}
 		  game.result = 'Win';
-		  let ccp1 = $('#Wp2').html();
-		  let ccp2 = $('#Lp1').html();
-		  ccp2++;
-		  ccp1 ++;
-		  $('#Lp1').html(ccp1);
-		  $('#Wp2').html(ccp2);
-		  //dataCollected.push(game);
+
+		  displayWinLooseDraw('Win','p2');
+		 
 		  gameOver = true;
 		},700);
 	}
 }
 
+function displayWinLooseDraw(res,type='') {
+	let cpp1;
+	let cpp2;
+	if(res === 'Win' && type === 'p2'){
+		ccp1 = $('#Wp2').html();
+		ccp2 = $('#Lp1').html();
+		ccp2++;
+		ccp1++;
+		$('#Lp1').html(ccp1);
+		$('#Wp2').html(ccp2);
+	} 
+	
+	if(res === 'Lost' && type === 'p1'){
+		ccp1 = $('#Wp1').html();
+		ccp2 = $('#Lp2').html();
+		ccp2++;
+		ccp1++;
+		$('#Lp2').html(ccp1);
+		$('#Wp1').html(ccp2);
+	}
+	if(res === 'Draw') {
+		ccp1 = $('#Dp2').html();
+		ccp2 = $('#Dp1').html();
+		ccp2++;
+		ccp1++;
+		$('#Dp1').html(ccp1);
+		$('#Dp2').html(ccp2);
+	}
+}
 
 function updateChoicesAndWinMoves(num, type) {
 	removeChoice(num, type);
@@ -274,7 +325,12 @@ function compsGoOrReset() {
 		if(choices.length !== 0){
 			  compMove(whoStarts);
 		} else {
-		  (game.result === 'Lost')? dataCollected.push(game): null;
+		  if(game.result === 'Lost'){
+			  dataCollected.push(game);
+			  if(storage === true){
+					localStorage.setItem('savedData', JSON.stringify(dataCollected));
+			  }
+		  };
 		  resetGame();
 		}
 	}
@@ -297,12 +353,7 @@ function displayCompMove() {
 		if(choices.length === 0) {
 			game.result = 'Draw';
 			//display win loose draw results
-			 let ccp1 = $('#Dp2').html();
-		     let ccp2 = $('#Dp1').html();
-		     ccp2++;
-		     ccp1 ++;
-		     $('#Dp1').html(ccp1);
-		     $('#Dp2').html(ccp2);
+			displayWinLooseDraw('Draw');
 			resetGame()
 			};
 	}
